@@ -17,13 +17,13 @@ Randomly select x amount of names and output the list
 
 #Asks user for their shortlist of names
 print('Please input your shortlist of names, make sure to separate the names by a single space.')
-#user_input_names = input()
+user_input_names = input()
 
 #INSERT value checker (check that no numberes are present below)
 
 #Convert input to list
-#user_list = user_input_names.split(' ')
-user_list = ['alex', 'nathan', 'joe', 'tom', 'bert', 'phil', 'chris']
+user_list = user_input_names.split(' ')
+
 user_length = len(user_list)
 
 #Ask user for the lenght of list that they would like returned
@@ -84,6 +84,9 @@ def list_remover(user_output_length):
 
         #Remove the index from list
         user_list.pop(temp)
-    print(user_list)
+    
+    print('The names chosen are:')
+    for x in range (len(user_list)):
+        print(user_list[x])
     
 list_remover(user_output_length)
