@@ -24,11 +24,12 @@ print('Please input your shortlist of names, make sure to separate the names by 
 #Convert input to list
 #user_list = user_input_names.split(' ')
 user_list = ['alex', 'nathan', 'joe', 'tom', 'bert', 'phil', 'chris']
+user_length = len(user_list)
 
 #Ask user for the lenght of list that they would like returned
 
 #Global variable for user input
-user_output_length = 0
+
 
 def length_input():
 
@@ -39,7 +40,7 @@ def length_input():
         None
 
     Returns:
-        If the input was accepted  
+        Lenght of user 
     """
 
     print('Input the length of list you would like returned')
@@ -57,12 +58,15 @@ def length_input():
     else:
         print('Input accepted')
 
+    return user_output_length
 
-length_input()
+
+user_output_length = length_input()
 
 #Generate the random numbers to select the names from
 
 def list_remover(user_output_length):
+
     """
     Removes number of items 
 
@@ -73,12 +77,13 @@ def list_remover(user_output_length):
         Outputs list name 
     """
 
-    for i in range (len(user_list) - user_output_length):
-        temp = random.randint(0, len(user_list))
+    while len(user_list) > (user_output_length):
+
+        #Assign a random number between 0 and list size
+        temp = random.randint(0, (len(user_list) - 1))
 
         #Remove the index from list
         user_list.pop(temp)
-    
     print(user_list)
     
 list_remover(user_output_length)
